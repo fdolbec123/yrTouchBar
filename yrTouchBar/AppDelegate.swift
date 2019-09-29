@@ -28,6 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
+        if #available(OSX 10.12.1, *) {
+            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
